@@ -4,7 +4,7 @@
 let earthquakeURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson";
 
 let faultLinesURL = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json";
-
+var  API_KEY="pk.eyJ1IjoiYXR1bGJoaW5nYXJkZSIsImEiOiJja2NoMWQ1b2cwMnJwMnBtaXI0Nzc1emtrIn0.F0X7jG6hTM9iaLgBwRCP2g";
 //----------------------------------------------------------------------------
 // Calls function to render map
 //----------------------------------------------------------------------------
@@ -93,16 +93,17 @@ function renderMap(earthquakeURL, faultLinesURL) {
     // Define outdoors, satellite, and darkmap layers
     // Outdoors layer
     let outdoors = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
-        "access_token=pk.eyJ1IjoiZGF2aXNjYXJkd2VsbCIsImEiOiJjamViam4yMHEwZHJ4MnJvN3kweGhkeXViIn0." +
-        "A3IKm_S6COZzvBMTqLvukQ");
+        "access_token="+API_KEY) ; 
+        
+  
       // Satellite layer
     let satellite = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/{z}/{x}/{y}?" +
-        "access_token=pk.eyJ1IjoiZGF2aXNjYXJkd2VsbCIsImEiOiJjamViam4yMHEwZHJ4MnJvN3kweGhkeXViIn0." +
-        "A3IKm_S6COZzvBMTqLvukQ");
+        "access_token="+API_KEY);
+        
       // Darkmap layer
     let darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/256/{z}/{x}/{y}?" +
-        "access_token=pk.eyJ1IjoiZGF2aXNjYXJkd2VsbCIsImEiOiJjamViam4yMHEwZHJ4MnJvN3kweGhkeXViIn0." +
-        "A3IKm_S6COZzvBMTqLvukQ");
+        "access_token=" + API_KEY );
+        
 
     // Define a baseMaps object to hold base layers
     let baseMaps = {
